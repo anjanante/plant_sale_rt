@@ -1,6 +1,7 @@
 
 import { plantList } from '../datas/plantList'
 import '../styles/ShoppingList.css'
+import CareScale from './CareScale'
 
 
 
@@ -20,15 +21,18 @@ export default function ShoppingList(){
                 ))}
             </ul>
             <hr/>
-            <ul className='lmj-plant-list'>
+
+            <div className='row'>
                 {plantList.map((item,index) => (
-                    <li key={item.id}>
+                    <div className='col-md-4 box' key={item.id}>
                         {item.name} 
                         {item.isBestSale && <span>🔥</span>}
                         {item.isSpecialOffer && <div className='lmj-sales'>SOLD</div>}
-                    </li>
+                        <CareScale scaleValue={item.light} />
+                    </div>
                 ))}
-            </ul>
+
+            </div>
         </div>
     )
 }

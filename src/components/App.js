@@ -5,8 +5,14 @@ import ShoppingList from './ShoppingList';
 function App() {
   return (<div>
     <Banner />
-    <Cart />
-    <ShoppingList />
+    <div className='row'>   
+      <div className='col-md-3'>   
+        <Cart />
+      </div>
+      <div className='col-md-9'> 
+        <ShoppingList />
+      </div>
+    </div> 
   </div>);
 }
 

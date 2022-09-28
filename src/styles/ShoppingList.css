@@ -26,4 +26,10 @@
 	color: white;
 	padding: 5px 10px;
 	background-color: #31b572;
+	text-align: center;
+	display: inline-block;
+}
+
+.box{
+	border:1px solid rgb(62, 122, 54);
 }
