@@ -1,13 +1,11 @@
 import '../styles/Banner.css'
-import logo from '../assets/logo.png'
 
-export default function Banner() {
+export default function Banner({children}) {
     const title = 'The jungle house'
     return (
         <div className="jumbotron">
             <div className='lmj-banner'>
-                <img src={logo} alt={title} className='float-left' />
-                <h1 className='display-4 lmj-title'>{title}</h1>
+                {children}
             </div >
         </div>
     )

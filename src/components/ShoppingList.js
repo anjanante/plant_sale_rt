@@ -1,7 +1,7 @@
 
 import { plantList } from '../datas/plantList'
 import '../styles/ShoppingList.css'
-import CareScale from './CareScale'
+import PlantItem from './PlantItem'
 
 
 
@@ -23,12 +23,11 @@ export default function ShoppingList(){
             <hr/>
 
             <div className='row'>
-                {plantList.map((item,index) => (
-                    <div className='col-md-4 box' key={item.id}>
-                        {item.name} 
-                        {item.isBestSale && <span>🔥</span>}
-                        {item.isSpecialOffer && <div className='lmj-sales'>SOLD</div>}
-                        <CareScale scaleValue={item.light} />
+                {plantList.map(({ id, cover, name, water, light }) => (
+                    <div className='col-md-4' key={id}>
+                        {/* {item.isBestSale && <span>🔥</span>}
+                        {item.isSpecialOffer && <div className='lmj-sales'>SOLD</div>} */}
+                        <PlantItem name={name} id={id} cover={cover} water={water} light={light} />
                     </div>
                 ))}
 
