@@ -58,7 +58,7 @@ export const plantList = [
 		isBestSale: true,
 		light: 2,
 		water: 3,
-		cover: monstera
+		cover: ficus
 	},
 	{
 		name: 'aloe',
