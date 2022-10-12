@@ -2,6 +2,7 @@ import Banner from './Banner';
 import Cart from './Cart';
 import ShoppingList from './ShoppingList';
 import logo from '../assets/logo.png';
+import Footer from './Footer';
 
 function App() {
   return (<div>
@@ -17,6 +18,7 @@ function App() {
         <ShoppingList />
       </div>
     </div> 
+    <Footer />
   </div>);
 }
 

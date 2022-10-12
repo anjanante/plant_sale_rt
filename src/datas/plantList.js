@@ -8,7 +8,7 @@ export const plantList = [
 		id: '1ed',
 		isBestSale: true,
 		light: 2,
-		water: 3,
+		water: 5,
 		cover: monstera
 	},
 	{
