@@ -16,7 +16,7 @@ export default function PlantItem({name,cover,light,water}){
             </div>
             <span className="card-text"><CareScale careType='water' scaleValue={water} /></span>
             <span className="card-text"><CareScale careType='light' scaleValue={light} /></span>
-            <a href="#" className="card-link">Add</a>
+            <button href="#" className="btn btn-info">Add</button>
         </div>
     )
 }
