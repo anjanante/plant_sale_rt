@@ -1,26 +1,28 @@
 import { useState } from 'react';
 import '../styles/Cart.css'
 
-export default function Cart() {
-    const [cart, updateCart]   = useState(0);
+export default function Cart({cart,updateCart}) {
     const [isOpen, setIsOpen]  = useState(true);
-    const monsteraPrice = 8;
-    const ivyPrice = 10;
-    const flowerPrice = 15;
+    const total = cart.reduce(
+        (currentvalue, plantType) => currentvalue + plantType.amount*plantType.price,
+        0
+    );
+
     return isOpen ? (
         <div className="lmj-cart">
             <button onClick={() => setIsOpen(false)} className='lmj-cart-toggle-button'>X</button>
-            <h2>Panier</h2>
-            <ul>
-                <li>Monstera : {monsteraPrice}€  
-                    <button onClick={() => updateCart(cart+1)}>Add</button>
-                </li>
-                {/* <li>Lierre : {ivyPrice}€</li>
-                <li>Fleurs : {flowerPrice}€</li> */}
+            <h2>Basket</h2>
+            <ul className="list-group">
+                {cart.map(({name,price,amount},index) => (
+                    <li key={`${name}-${index}`} className="list-group-item list-group-item-light">
+                        {name} {price}Ar * {amount}
+                    </li>
+                ))}
             </ul>
-            Total : {(monsteraPrice*cart)}€
+            Total : {total}Ar
+            <hr/>
             <div>
-                <button onClick={() => updateCart(0)} className="btn btn-secondary">Empty the cart</button>
+                <button onClick={() => updateCart([])} className="btn btn-secondary">Empty the cart</button>
             </div>
         </div>
     ) : (
