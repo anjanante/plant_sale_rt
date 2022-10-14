@@ -3,14 +3,16 @@ import '../styles/Cart.css'
 
 export default function Cart({cart,updateCart}) {
     const [isOpen, setIsOpen]  = useState(true);
+
     const total = cart.reduce(
         (currentvalue, plantType) => currentvalue + plantType.amount*plantType.price,
         0
     );
-
+    
+    //add effect when render (of total) in finished 
     useEffect(() => {
-        alert(`J'aurai ${total}€ à payer 💸`)
-    })
+        document.title = `TJH: ${total}Ar to buy 💸`
+    }, [total])
 
     return isOpen ? (
         <div className="lmj-cart">
