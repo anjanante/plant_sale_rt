@@ -10,7 +10,7 @@ export default function Footer() {
 
 	function handleBlur() {
 		if (!inputValue.includes('@')) {
-			alert("Attention, il n'y a pas d'@, ceci n'est pas une adresse valide 😥")
+			alert("Attention, there is no @, this is not a valid address 😥")
 		}
 	}
 

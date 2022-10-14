@@ -8,18 +8,18 @@ export default function CareScale({scaleValue, careType}) {
 
     function handleClick(scaleValue,careType){
         const type = {
-            '1' : 'peu',
-            '2' : 'modérement',
-            '3' : 'beaucoup',
+            '1' : 'little',
+            '2' : 'moderately',
+            '3' : 'many',
         }
-        const msg   = 'Cette plante requiert'
+        const msg   = 'This plant requires'
 
-        const value = scaleValue > 3 ? 3 : scaleValue;
+        const value = scaleValue > 3 ? 3 : scaleValue
 
         if(careType === 'light'){
-            alert(msg+' '+type[value]+'de lumière');
+            alert(msg+' '+type[value]+' light')
         }else{
-            alert(msg+' '+type[value]+' d\'arrosage');
+            alert(msg+' '+type[value]+' watering')
         }
     }
     return (
